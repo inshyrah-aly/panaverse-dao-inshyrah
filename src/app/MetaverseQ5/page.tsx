@@ -92,7 +92,7 @@ const MetaverseQ5 = () => {
               them. This is only achievable with open web-based metaverses. The
               internet and its browsers are magical. Federated but linked
               experiences connect pages, people, technology, businesses,
-              standards, and nations. It's unlike anything else. The metaverse
+              standards, and nations. It&apos;s unlike anything else. The metaverse
               should replicate the best qualities of the web - it should just be
               the web. We just have to extend online responsive design from
               mobile to desktop to 3D, Augmented Reality, and Virtual Reality.
