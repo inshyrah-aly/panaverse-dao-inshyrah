@@ -1,36 +1,13 @@
-import {
-    Box,
-    VStack,
-    Button,
-    Flex,
-    Divider,
-    chakra,
-    Grid,
-    GridItem,
-    Container,
-    Link,
-  } from '@chakra-ui/react';
-  import {} from '@chakra-ui/react';
+'use client'
+import { Box, Button, chakra, Flex, Grid, GridItem, Link, VStack } from '@chakra-ui/react';
+import {} from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
+
   
-  interface FeatureProps {
-    heading: string;
-    text: string;
-  }
-  
-  const Feature = ({ heading, text }: FeatureProps) => {
-    return (
-      <GridItem>
-        <chakra.h3 fontSize="xl" fontWeight="600">
-          {heading}
-        </chakra.h3>
-        <chakra.p>{text}</chakra.p>
-      </GridItem>
-    );
-  };
   
   export default function Features() {
     return (
-      <Box as={Container} maxW="7xl" mt={14} p={4}>
+      <Box as={Container} maxW="4xl" mt={20} p={8}>
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
@@ -41,9 +18,9 @@ import {
           <GridItem colSpan={1}>
             <VStack alignItems="flex-start" spacing="20px">
               <chakra.h2 fontSize="3xl" fontWeight="700">
-                THE LEADING ERA OF TECHNOLOGY
+              The Outcome for Participants of the Program
               </chakra.h2>
-              <Button colorScheme="green" size="md">
+              <Button colorScheme="green" size="sm">
                 
                 <Link href="https://kpmg.com/xx/en/home/insights/2022/04/the-future-of-the-metaverse.html">Future Of Metaverse</Link>
               </Button>
@@ -51,15 +28,15 @@ import {
           </GridItem>
           <GridItem>
             <Flex>
-              <chakra.p>
-                Provide your customers a story they would enjoy keeping in mind
-                the objectives of your website. Pay special attention to the tone
-                of voice.
+              <chakra.p>                
+                The graduates of this program will own products (Full-Stack App Templates, AR and VR Experiences, and APIs) that are marketed globally by the Panaverse DAO and, if they like, will also be able to start off by offering services at a rate of $50 per hour ($96,000 per year). This would give Pakistani professionals and students a fantastic opportunity to better their financial situation while also giving the economy a much-needed boost by expanding software exports.
               </chakra.p>
+
             </Flex>
           </GridItem>
         </Grid>
-       
-      </Box>
+          
+  </Box>
+      
     );
   }

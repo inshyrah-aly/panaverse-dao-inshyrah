@@ -1,21 +1,13 @@
-import {
-    Box,
-    chakra,
-    Container,
-    Flex,
-    Link,
-    Stack,
-    Text,
-    useColorModeValue,
-    VisuallyHidden,
-  } from '@chakra-ui/react';
-  import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-  import { ReactNode } from 'react';
-  
-  const Logo = (props: any) => {
+'use client'
+import { Box, chakra, Container, Img, Link, Stack, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { ReactNode } from 'react';
+import { Text } from '@chakra-ui/react';
+
+  const Logo = () => {
     return (
         
-        <nav className="navbar navbar-light bg-light"> <div className="container"> <Link > < img src="/logo.png" alt="" width="100" height="58" /></Link></div> </nav>
+        <nav className="navbar navbar-light bg-light"> <div className="container"> <Link > < Img src="/logo.png" alt="" width="100" height="58" /></Link></div> </nav>
         
          );
   };
@@ -54,7 +46,7 @@ import {
   export default function Footer() {
     return (
       <Box
-        bg={useColorModeValue('gray.50', 'gray.900')}
+        bg={useColorModeValue('green.50', 'gray.900')}
         color={useColorModeValue('gray.700', 'gray.200')}>
         <Container
           as={Stack}
@@ -66,8 +58,6 @@ import {
           <Logo />
           <Stack direction={'row'} spacing={6}>
             <Link href={'#'}>Home</Link>
-            <Link href={'#'}>About</Link>
-            <Link href={'#'}>Blog</Link>
             <Link href={'#'}>Contact</Link>
           </Stack>
         </Container>

@@ -1,4 +1,7 @@
+'use client'
 import { Avatar, Box, Flex, keyframes } from '@chakra-ui/react';
+
+
 
 export default function imagesAndicons() {
   const size = '96px';
@@ -24,7 +27,7 @@ export default function imagesAndicons() {
       h="216px"
       w="full"
       overflow="hidden">
-      {/* Ideally, only the box should be used. The <Flex /> is used to style the preview. */}
+    
       <Box
         as="div"
         position="relative"

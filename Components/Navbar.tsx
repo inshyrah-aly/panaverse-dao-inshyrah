@@ -1,3 +1,4 @@
+'use client'
 import {
   Box,
   Flex,
@@ -14,6 +15,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Img
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -21,7 +23,9 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
-import { Children } from 'react';
+
+
+
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -30,14 +34,14 @@ export default function Navbar() {
     <>
     <Box>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={useColorModeValue('green.200', 'black.800')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.300', 'gray.900')}
+        borderColor={useColorModeValue('gray.300', 'gray.700')}
         align={'center'}>
         <Flex
           flex={{ base: 1, md: 'auto' }}
@@ -48,7 +52,7 @@ export default function Navbar() {
             icon={
               isOpen ? <CloseIcon w={4} h={3} /> : <HamburgerIcon w={4} h={5} />
             }
-            variant={'ghost'}
+            variant={'solid'}
             aria-label={'Toggle Navigation'}
           />
         </Flex>
@@ -58,11 +62,12 @@ export default function Navbar() {
            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
+              
               <Button>
-              <nav className="navbar navbar-light bg-light"> <div className="container"> <Link > < img src="/logo.png" alt="" width="30" height="28" /></Link> </div> </nav>
+              <nav className="navbar navbar-light bg-light"> <div className="container">< Img src="/logo.png" alt="Logo" width="50" height="38" /></div></nav>
               </Button></Text>
 
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <Flex display={{ base: 'none', md: 'flex' }} ml={90}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -77,8 +82,6 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('green.500', 'gray.700');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (
@@ -91,7 +94,7 @@ const DesktopNav = () => {
                 p={2}
                 href={navItem.href ?? '#'}
                 fontSize={'sm'}
-                fontWeight={600}
+                fontWeight={700}
                 color={'black.900'}
                 _hover={{
                   textDecoration: 'underline',
@@ -160,7 +163,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 const MobileNav = () => {
   return (
     <Stack
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={useColorModeValue('black', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
@@ -176,7 +179,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
-        py={2}
+        py={6}
         as={Link}
         href={href ?? '#'}
         justify={'space-between'}
@@ -186,7 +189,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         }}>
         <Text
           fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}>
+          color={useColorModeValue('gray.600', 'gray.900')}>
           {label}
         </Text>
         {children && (
@@ -275,7 +278,7 @@ const NAV_ITEMS: Array<NavItem> = [
       },
       {
         label: 'AI Learning and Deep Learning Specialization',
-        href: 'https://www.piaic.org/artificial-inteligence'
+        href: './SyllabusAI/ai-page'
       },
       {
         label: 'Blockchain Specialization',
@@ -291,14 +294,5 @@ const NAV_ITEMS: Array<NavItem> = [
       },
       
     ]
-  },
-  {
-    label: 'Get Enrolled',
-    children: [
-      {
-    label: 'Apply in PIAIC',
-    href: 'https://portal.piaic.org/signup'
-    },
-]
-  },
+  }
 ];
