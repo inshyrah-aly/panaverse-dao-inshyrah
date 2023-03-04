@@ -1,13 +1,13 @@
 'use client'
 import { Box, chakra, Container, Img, Link, Stack, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ReactNode } from 'react';
 import { Text } from '@chakra-ui/react';
 
   const Logo = () => {
     return (
         
-        <nav className="navbar navbar-light bg-light"> <div className="container"> <Link > < Img src="/logo.png" alt="" width="100" height="58" /></Link></div> </nav>
+        <nav className="navbar navbar-light bg-light"> <div className="container"><Link><Img src="/logo.png" alt="Logo" width="100" height="58" /></Link></div></nav>
         
          );
   };
@@ -57,8 +57,9 @@ import { Text } from '@chakra-ui/react';
           align={'center'}>
           <Logo />
           <Stack direction={'row'} spacing={6}>
-            <Link href={'#'}>Home</Link>
-            <Link href={'#'}>Contact</Link>
+            <Link href={'/'}>Home</Link>
+            <Link href={'https://docs.google.com/document/d/13Z4tMKQmZpMEsOc1Y_qAXbOstRolGIFupHxQFgAFl98/edit'}>Google Docs</Link>
+            <Link href={'https://www.facebook.com/piaic/photos/a.2205018386426834/3347484085513586/?type=3'}>Alumni</Link>
           </Stack>
         </Container>
   
@@ -76,15 +77,21 @@ import { Text } from '@chakra-ui/react';
             align={{ base: 'center', md: 'center' }}>
             <Text>© 2023 Panaverse DAO.  All rights reserved</Text>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'#'}>
+              <SocialButton label={'Facebook'} href={'https://www.facebook.com/panaverse.dao'}>
+                <FaFacebook/>
+                </SocialButton>
+              <SocialButton label={'Twitter'} href={'https://twitter.com/Panaverse_edu'}>
                 <FaTwitter />
               </SocialButton>
-              <SocialButton label={'YouTube'} href={'#'}>
+              <SocialButton label={'YouTube'} href={'https://www.youtube.com/@panaverse'}>
                 <FaYoutube />
               </SocialButton>
-              <SocialButton label={'Instagram'} href={'#'}>
+              <SocialButton label={'Instagram'} href={'https://www.instagram.com/piaicofficial/?hl=en'}>
                 <FaInstagram />
               </SocialButton>
+              <SocialButton label={'GitHub'} href={'https://github.com/panaverse'}>
+                <FaGithub/>
+                </SocialButton>
             </Stack>
           </Container>
         </Box>

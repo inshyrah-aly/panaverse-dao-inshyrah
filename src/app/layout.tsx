@@ -2,7 +2,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from 'Components/Navbar'
 import Footer from 'Components/Footer'
-
+import Head from 'next/head';
 
 
 export default function RootLayout({

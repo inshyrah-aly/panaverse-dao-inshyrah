@@ -13,6 +13,7 @@ import {
 import React from "react";
 import { Image } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
+import { Highlight } from '@chakra-ui/react';
 
 const Q1 = () => {
   return (
@@ -92,6 +93,7 @@ const Q1 = () => {
                 src={"https://i.ibb.co/2nvHgV1/Pngtree-illustration-works-as-a-programmer-5980063.png"}
               />
             </div>
+            <Box w={'100%'} h={'auto'} bg={'teal.100'} border={'1px'} borderColor={'green.100'} borderRadius={'26'} boxShadow={'lg'} mt={20}>
             <Heading
               as="h1"
               size={["xl", "2xl"]}
@@ -681,14 +683,16 @@ const Q1 = () => {
               fontWeight={"medium"}
               px={[2, 12]}
               pt={4}
-              mb={1}
+              mb={8}
             >
               Total Questions: 60, Total Time: 75 minutes
             </Text>
           </Box>
+          </Box>
         </VStack>
       </Box>
-    </Stack></>
+    </Stack>   
+    </>
   );
 };
 

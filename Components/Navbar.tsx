@@ -32,17 +32,22 @@ export default function Navbar() {
 
   return (
     <>
-    <Box>
-      <Flex
-        bg={useColorModeValue('green.200', 'black.800')}
-        color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.300', 'gray.700')}
-        align={'center'}>
+    <Box position="sticky" top={0} zIndex="sticky">
+    <Flex
+      position="sticky"
+      top="0"
+      zIndex="sticky"
+      bg={useColorModeValue('green.400', 'black.800')}
+      color={useColorModeValue('gray.700', 'white')}
+      minH={'70px'}
+      py={{ base: 2 }}
+      px={{ base: 4 }}
+      borderBottom={1}
+      borderStyle={'solid'}
+      borderColor={useColorModeValue('green.400', 'green.400')}
+      align={'center'}
+      opacity={0.9}
+    >
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -56,7 +61,7 @@ export default function Navbar() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+        <Flex flex={{ base: 1 }} justify={{ base: 'end', md: 'start' }}>
           <Text
            
            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
@@ -82,23 +87,23 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  const popoverContentBgColor = useColorModeValue('white', 'gray.800') ;
 
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.label} >
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Link
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
+                fontSize={'md'}
                 fontWeight={700}
-                color={'black.900'}
+                color={'gray.800'}
                 _hover={{
                   textDecoration: 'underline',
-                  color: 'green.400',
+                  color: 'green.100',
                 }}>
                 {navItem.label}
               </Link>
@@ -106,6 +111,7 @@ const DesktopNav = () => {
 
             {navItem.children && (
               <PopoverContent
+              
                 border={0}
                 boxShadow={'xl'}
                 bg={popoverContentBgColor}
@@ -163,7 +169,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 const MobileNav = () => {
   return (
     <Stack
-      bg={useColorModeValue('black', 'gray.800')}
+      bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
@@ -232,9 +238,10 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'PIAIC',
-    href: 'https://www.piaic.org/',
+    label: 'Home',
+    href: '/'
   },
+  
   {
     label: 'Panacloud',
     children: [
@@ -244,7 +251,7 @@ const NAV_ITEMS: Array<NavItem> = [
       },
       {
         label: 'Panacloud Pvt Ltd - LinkedIn',
-        href: 'https://www.linkedin.com/company/panacloud-pvt-ltd/'
+        href: 'https://www.linkedin.com/company/panaverse/'
       },
       {
         label: 'Panacloud Pvt Ltd - Facebook',
@@ -261,38 +268,7 @@ const NAV_ITEMS: Array<NavItem> = [
   ]
   },
   {
-    label: "Alumni",
-    children: [
-      {
-        label: "Zia's Alumni",
-        href: 'https://www.facebook.com/piaic/photos/a.2205018386426834/3347484085513586/?type=3'
-      },
-    ],
+    label: 'PIAIC',
+    href: 'https://www.piaic.org/',
   },
-  {
-    label: 'Programs Offered',
-    children: [
-      {
-        label: 'Certified Web 3.0 and Metaverse Developer',
-        href: "https://docs.google.com/document/d/13Z4tMKQmZpMEsOc1Y_qAXbOstRolGIFupHxQFgAFl98/edit"
-      },
-      {
-        label: 'AI Learning and Deep Learning Specialization',
-        href: './SyllabusAI/ai-page'
-      },
-      {
-        label: 'Blockchain Specialization',
-        href: 'https://www.piaic.org/block-chain'
-      },
-      {
-        label: 'Cloud-Native Computing Specialization',
-        href: 'https://www.piaic.org/cloud-native'
-      },
-      {
-        label: 'Ambient Computing and IoT Specialization',
-        href: 'https://www.piaic.org/iot'
-      },
-      
-    ]
-  }
 ];

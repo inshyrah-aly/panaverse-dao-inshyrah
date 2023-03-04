@@ -21,7 +21,11 @@ interface TestimonialProps {
 }
 
 const Testimonial = ({ children }: TestimonialProps) => {
-  return <Box mb={12} className={styles.testimonial}>{children}</Box>;
+  return (
+    <Box mb={12} className={styles.testimonial}>
+      {children}
+    </Box>
+  );
 };
 
 const TestimonialContent = ({ children }: { children: ReactNode }) => {
@@ -56,7 +60,12 @@ const TestimonialContent = ({ children }: { children: ReactNode }) => {
 
 const TestimonialHeading = ({ children }: { children: ReactNode }) => {
   return (
-    <Heading as={"h4"} textAlign={{ base: "center", md: "left" }} color={'gray.700'} fontSize={"2xl"}>
+    <Heading
+      as={"h4"}
+      textAlign={{ base: "center", md: "left" }}
+      color={"gray.700"}
+      fontSize={"3xl"}
+    >
       {children}
     </Heading>
   );
@@ -172,7 +181,7 @@ const Content = () => {
             fontSize="lg"
           >
             Every participant of the program will start by completing the
-            following two core courses:
+            following three core courses:
           </Text>
         </Box>
       </VStack>
@@ -180,10 +189,10 @@ const Content = () => {
         <Container maxW={"2xl"} py={[20, 40]} as={Stack} spacing={[6, 10]}>
           <Stack spacing={[4, 5]} align={"center"}>
             <Heading
-              fontSize={["3xl", "4xl"]}
-              color={"blackAlpha.900"}
+              as="h1"
+              size={["xl", "2xl", "3xl"]}
+              color={"gray.700"}
               textAlign={"center"}
-              textDecoration={"underline"}
             >
               Common Quarters:
             </Heading>
@@ -192,57 +201,60 @@ const Content = () => {
           <VStack
             direction={{ base: "column", md: "row" }}
             spacing={{ base: 8, md: 12, lg: 12 }}
-          ><Box>
-            <Testimonial>
-              <Link href="/Q1">
-                <TestimonialContent>
-                  <TestimonialHeading>
-                    Quarter I (Core) CS-101:
-                  </TestimonialHeading>
-                  <TestimonialText>
-                    Object-Oriented Programming using TypeScript
-                  </TestimonialText>
-                </TestimonialContent>
-              </Link>
-            </Testimonial>
-            <Testimonial>
-              <Link href="/Q2">
-                <TestimonialContent>
-                  <TestimonialHeading>
-                    Quarter II (Core) W2-201:
-                  </TestimonialHeading>
-                  <TestimonialText>
-                    Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps
-                    and APIs using Next.js 13 and Cloud Development Kit (CDK)
-                    for Terraform
-                  </TestimonialText>
-                </TestimonialContent>
-              </Link>
-            </Testimonial>
-            <Testimonial>
-              <Link href="/Q3">
-                <TestimonialContent>
-                  <TestimonialHeading>
-                    Quarter III (Core) CS-301:
-                  </TestimonialHeading>
-                  <TestimonialText>
-                    Dollar Making Bootcamp - Full-Stack Template and API Product
-                    Development
-                  </TestimonialText>
-                </TestimonialContent>
-              </Link>
-            </Testimonial></Box>
+          >
+            <Box>
+              <Testimonial>
+                <Link href="/Q1">
+                  <TestimonialContent>
+                    <TestimonialHeading>
+                      Quarter I (Core) CS-101:
+                    </TestimonialHeading>
+                    <TestimonialText>
+                      Object-Oriented Programming using TypeScript
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+              <Testimonial>
+                <Link href="/Q2">
+                  <TestimonialContent>
+                    <TestimonialHeading>
+                      Quarter II (Core) W2-201:
+                    </TestimonialHeading>
+                    <TestimonialText>
+                      Developing Planet-Scale Web 2.0 Serverless Cloud Cloud
+                      Apps and APIs using Next.js 13 and Cloud Development Kit
+                      (CDK) for Terraform
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+              <Testimonial>
+                <Link href="/Q3">
+                  <TestimonialContent>
+                    <TestimonialHeading>
+                      Quarter III (Core) $-101:
+                    </TestimonialHeading>
+                    <TestimonialText>
+                      Dollar Making Bootcamp - Full-Stack Template and API
+                      Product Development
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+            </Box>
           </VStack>
         </Container>
+        <Box textAlign={'center'}>
         <Heading
           as="h1"
           size={["xl", "2xl", "3xl"]}
-          color={"gray.800"}
+          color={"gray.700"}
           px={[2, 12, 12]}
-          mt={8}
+          mt={-20}
           mb={3}
         >
-          Specialized Track
+          Specialized Tracks:
         </Heading>
         <Text
           as="p"
@@ -253,10 +265,11 @@ const Content = () => {
           color="gray.800"
           mb={12}
         >
-          After completing the first two quarters the participants will select
+          After completing the first three quarters the participants will select
           one or more specializations consisting of two courses each:
-        </Text>
-        <Heading as="h3" size={["lg", "xl"]} color={"yellow.600"} px={[2, 12]}>
+        </Text></Box>
+        <Box textAlign={'center'}>
+        <Heading as="h3" marginTop={20} size={["lg", "xl"]} color={"yellow.600"} px={[2, 12]}>
           Web 3.0 (Blockchain) and Metaverse Specialization
         </Heading>
         <Text
@@ -273,43 +286,286 @@ const Content = () => {
           of the internet by specializing in building worlds that merge the best
           of cutting-edge decentralized distributed blockchains with 3D
           metaverse client experiences.
-        </Text>
-      </Box>
-      <Box>
+        </Text></Box>
         <Container>
           <VStack
             direction={{ base: "column", md: "row" }}
-            spacing={{ base: 8, md: 10, lg: 12 }}
-            mt={20}
+            spacing={{ base: 8, md: 12, lg: 12 }}
           >
-            <Testimonial>
-              <Link href="/MetaverseQ4">
-                <TestimonialContent>
-                  <TestimonialHeading>
-                  Quarter IV W3-351:
-                  </TestimonialHeading>
-                  <TestimonialText>
-                  Developing Smart Contracts and Planet-Scale Web 3.0 Dapps
-                  </TestimonialText>
-                </TestimonialContent>
-              </Link>
-            </Testimonial>
-            <Testimonial>
-              <Link href="/MetaverseQ5">
-                <TestimonialContent>
-                  <TestimonialHeading>
-                  Quarter V MV-361:
-                  </TestimonialHeading>
-                  <TestimonialText>
-                  Developing Planet-Scale Open Virtual and Augmented Metaverse Experiences
-                  </TestimonialText>
-                </TestimonialContent>
-              </Link>
-            </Testimonial>
+            <Box>
+              <Testimonial>
+                <Link href="/MetaverseQ4">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter IV W3-351:</TestimonialHeading>
+                    <TestimonialText>
+                      Developing Smart Contracts and Planet-Scale Web 3.0 Dapps
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+              <Testimonial>
+                <Link href="/MetaverseQ5">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter V MV-361:</TestimonialHeading>
+                    <TestimonialText>
+                      Developing Planet-Scale Open Virtual and Augmented
+                      Metaverse Experiences
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+            </Box>
+          </VStack>
+        </Container>
+        
+<Box textAlign={'center'}>
+        <Heading
+          as="h3"
+          size={["lg", "xl"]}
+          color={"yellow.600"}
+          px={[2, 12]}
+          mt={20}
+        >
+          Artificial Intelligence (AI) and Deep Learning Specialization
+        </Heading>
+        <Text
+          as="p"
+          fontSize={["md", "lg"]}
+          fontWeight={"medium"}
+          px={[2, 12]}
+          pt={4}
+          color="gray.800"
+          mb={12}
+        >
+          The AI and Deep Learning specialization focuses on building and
+          deploying intelligent APIs using OpenAI models and building custom
+          Deep Learning Tensorflow models.
+        </Text></Box>
+        <Container>
+          <VStack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 8, md: 12, lg: 12 }}
+          >
+            <Box>
+              <Testimonial>
+                <Link href="/AiQ4">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter IV AI-351:</TestimonialHeading>
+                    <TestimonialText>
+                      Developing Planet-Scale Intelligent APIs and Python
+                      Programming
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+              <Testimonial>
+                <Link href="/AiQ5">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter V AI-361:</TestimonialHeading>
+                    <TestimonialText>Deep Learning and MLOps</TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+            </Box>
           </VStack>
         </Container>
       </Box>
-    </Box>
+      <Box textAlign={'center'}>
+      <Heading
+          as="h3"
+          size={["lg", "xl"]}
+          color={"yellow.600"}
+          px={[2, 12]}
+          mt={20}
+        >
+          Cloud-Native Computing Specialization
+        </Heading>
+        <Text
+          as="p"
+          fontSize={["md", "lg"]}
+          fontWeight={"medium"}
+          px={[2, 12]}
+          pt={4}
+          color="gray.800"
+          mb={12}
+        >
+          The Cloud-Native Computing Specialization focuses on Containers, Kubernetes, and CDK for Kubernetes.
+        </Text></Box>
+        <Container>
+          <VStack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 8, md: 12, lg: 12 }}
+          >
+            <Box>
+              <Testimonial>
+                <Link href="/CNCQ4">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter IV CN-351:</TestimonialHeading>
+                    <TestimonialText>
+                    Certified Kubernetes Application Developer (CKAD)
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+              <Testimonial>
+                <Link href="/CNCQ5">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter V CN-361:</TestimonialHeading>
+                    <TestimonialText>Developing Multi-Cloud APIs using CDK for Terraform</TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+            </Box>
+          </VStack>
+        </Container>
+        <Box textAlign={'center'}>
+       <Heading
+          as="h3"
+          size={["lg", "xl"]}
+          color={"yellow.600"}
+          px={[2, 12]}
+          mt={20}
+        >
+          Ambient Computing and IoT Specialization
+        </Heading>
+        <Text
+          as="p"
+          fontSize={["md", "lg"]}
+          fontWeight={"medium"}
+          px={[2, 12]}
+          pt={4}
+          color="gray.800"
+          mb={12}
+        >
+         The Ambient Computing and IoT Specialization focuses on building Smart Homes, Offices, Factories, and Cities using Voice computing, Matter Protocol, and Embedded Devices.
+        </Text></Box>
+        <Container>
+          <VStack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 8, md: 12, lg: 12 }}
+          >
+            <Box>
+              <Testimonial>
+                <Link href="/ACQ4">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter IV AC-351:</TestimonialHeading>
+                    <TestimonialText>
+                    Ambient Computing with Voice Assistants and Matter Devices
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+              <Testimonial>
+                <Link href="/ACQ5">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter V AC-361:</TestimonialHeading>
+                    <TestimonialText>Embedded Programming using C and Rust                     
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+            </Box>
+          </VStack>
+        </Container>
+        <Box textAlign={'center'}>
+        <Heading
+          as="h3"
+          size={["lg", "xl"]}
+          color={"yellow.600"}
+          px={[2, 12]}
+          mt={20}
+        >
+          Genomics and Bioinformatics Specialization
+        </Heading>
+        <Text
+          as="p"
+          fontSize={["md", "lg"]}
+          fontWeight={"medium"}
+          px={[2, 12]}
+          pt={4}
+          color="gray.800"
+          mb={12}
+        >
+         Genomics is the study of the total genetic makeup of individual organisms, and how this genetic information is structured, functions, and has evolved; bioinformatics encompasses a diverse range of analytical methods and tools applied to genomic data. This Specialization focuses on performing complex bioinformatics analysis using the most essential Python libraries and applications.
+        </Text></Box>
+        <Container>
+          <VStack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 8, md: 12, lg: 12 }}
+          >
+            <Box>
+              <Testimonial>
+                <Link href="/GBQ4">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter IV Bio-351:</TestimonialHeading>
+                    <TestimonialText>
+                    Python for Biologists
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+              <Testimonial>
+                <Link href="/GBQ5">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter V Bio-361:</TestimonialHeading>
+                    <TestimonialText> Bioinformatics with Python                  
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+            </Box>
+          </VStack>
+        </Container>
+        <Box textAlign={'center'}>   
+        <Heading
+          as="h3"
+          size={["lg", "xl"]}
+          color={"yellow.600"}
+          px={[2, 12]}
+          mt={20}
+        >
+          Network Programmability and Automation Specialization
+        </Heading>
+        <Text
+          as="p"
+          fontSize={["md", "lg"]}
+          fontWeight={"medium"}
+          px={[2, 12]}
+          pt={4}
+          color="gray.800"
+          mb={12}
+        >
+         More than ever, network engineers are finding it challenging to complete their duties entirely manually. Network automation is now crucial due to new protocols, technologies, delivery models, and the requirement for enterprises to become more adaptable and agile. This course teaches network engineers how to automate systems with code using a variety of technologies and tools, including Linux, Python, APIs, and Git.
+        </Text></Box>
+        <Container>
+          <VStack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 8, md: 12, lg: 12 }}
+          >
+            <Box>
+              <Testimonial>
+                <Link href="/NPAQ4">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter IV NPA-351:</TestimonialHeading>
+                    <TestimonialText>
+                    CCNA 200-301 Certification
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+              <Testimonial>
+                <Link href="/NPAQ5">
+                  <TestimonialContent>
+                    <TestimonialHeading>Quarter V NPA-361:</TestimonialHeading>
+                    <TestimonialText> Network Programmability and Automation                 
+                    </TestimonialText>
+                  </TestimonialContent>
+                </Link>
+              </Testimonial>
+            </Box>
+          </VStack>
+        </Container>
+      </Box>
   );
 };
 

@@ -88,7 +88,7 @@ const Q2 = () => {
           <Box flex={1}>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Image
-                alt={"Q1 Page Image"}
+                alt={"Q2 Page Image"}
                 objectFit={"cover"}
                 width="50%"
                 maxW="100%"
@@ -99,6 +99,7 @@ const Q2 = () => {
               />
             </div>
           </Box>
+          <Box w={'100%'} h={'auto'} bg={'teal.100'} border={'1px'} borderColor={'green.100'} borderRadius={'26'} boxShadow={'lg'} mt={20}>
           <Heading
             as="h1"
             size={["xl", "2xl"]}
@@ -517,10 +518,12 @@ const Q2 = () => {
                 pt={4}
                 color="blue.600"
                 mt={'-1'}
+                mb={8}
               >
                Build a Twitter Clone
               </Text>
             </Link>
+          </Box>
           </Box>
         </VStack>
       </Box>

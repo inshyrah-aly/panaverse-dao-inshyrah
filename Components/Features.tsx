@@ -7,7 +7,7 @@ import { Container } from '@chakra-ui/react';
   
   export default function Features() {
     return (
-      <Box as={Container} maxW="4xl" mt={20} p={8}>
+      <Box as={Container} maxW="4xl" mt={12} mb={12} p={8}>
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
@@ -17,7 +17,7 @@ import { Container } from '@chakra-ui/react';
           gap={4}>
           <GridItem colSpan={1}>
             <VStack alignItems="flex-start" spacing="20px">
-              <chakra.h2 fontSize="3xl" fontWeight="700">
+              <chakra.h2 fontSize="4xl" fontWeight="700">
               The Outcome for Participants of the Program
               </chakra.h2>
               <Button colorScheme="green" size="sm">

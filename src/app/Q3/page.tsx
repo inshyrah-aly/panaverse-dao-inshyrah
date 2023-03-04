@@ -2,12 +2,9 @@
 import {
   Box,
   Heading,
-  List,
-  ListItem,
   Text,
   VStack,
   Stack,
-  Button,
   Flex,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -42,7 +39,7 @@ const Q3 = () => {
               mt={8}
               mb={3}
             >
-              Quarter V (Web3 and Metaverse)
+              Quarter III (Core)
             </Heading>
             <Heading
               as="h3"
@@ -97,7 +94,7 @@ const Q3 = () => {
             <Box flex={1}>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <Image
-                  alt={"Q1 Page Image"}
+                  alt={"Q3 Page Image"}
                   objectFit={"cover"}
                   width="50%"
                   maxW="100%"
@@ -108,7 +105,7 @@ const Q3 = () => {
                 />
               </div>
             </Box>
-            <Box>
+            <Box w={'100%'} h={'auto'} bg={'teal.100'} border={'1px'} borderColor={'green.100'} borderRadius={'26'} boxShadow={'lg'} mt={20}>
               <Heading
                 as="h1"
                 size={["xl", "2xl"]}
@@ -139,7 +136,7 @@ const Q3 = () => {
               >
                 Build Full-Stack Next.js 13 Jamstack Templates
               </Heading>
-            </Box>
+            
             <Text
               as="p"
               fontSize={["md", "lg"]}
@@ -189,6 +186,7 @@ const Q3 = () => {
                 pt={4}
                 color="gray.800"
                 mt={5}
+                mb={8}
               >
                 You will be assigned to build APIs for which you will sell
                 subscriptions on the Panaverse DAO Marketplace. The Panaverse
@@ -198,7 +196,7 @@ const Q3 = () => {
                 distributed to the developer through the Panaverse DAO in the
                 form of Panaverse tokens.
               </Text>
-            </Box>
+            </Box></Box>
           </VStack>
         </Box>
       </Stack>
